@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Elephant from './Elephant';
+import WithDataRenderProps from './WithDataRenderProps';
 // import GodsContainer from './GodsContainer';
 // import GodsContainerLocalstorage from './GodsContainerLocalstorage';
 import GodsPresentational from './GodsPresentational';
@@ -21,8 +22,14 @@ class App extends Component {
         <Elephant count={7} />
         {/* <GodsContainer /> */}
         {/* <GodsContainerLocalstorage /> */}
-        <GodsWithData />
- 
+        {/* <GodsWithData /> */}
+        <WithDataRenderProps url="https://apis.devmountain.com/gods/">
+          {(data) => {
+            return <div>
+              There were {data.length } ancient gods
+            </div>
+          }}
+        </WithDataRenderProps>
       </div>
     );
   }

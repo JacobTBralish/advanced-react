@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Elephant from './Elephant';
+import Elephants from './Elephants';
 
 class App extends Component {
   render() {
@@ -9,13 +9,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a>
-          <Elephant count={9} />
-          </a>
+          <h1 className="App-title">Welcome to React</h1>
         </header>
+        <Elephants />
       </div>
     );
   }

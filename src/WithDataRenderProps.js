@@ -15,7 +15,7 @@ export default class WithDataRenderProps extends Component {
                 apikey: 'tylercollier'
             }
         }).then(response => {
-            this.setState({data: response.data, isLoading: false})
+            this.setState({data:response.data, isLoading: false})
         }).catch(error => {
             console.log(error);
         })
@@ -23,7 +23,7 @@ export default class WithDataRenderProps extends Component {
 
     render() {
         let { isLoading, data } = this.state;
-        let { children } = this.props;
+        let {children} = this.props;
         return (
             <div>
                 {(isLoading || !data)

@@ -8,7 +8,8 @@ import WithDataRenderProps from './WithDataRenderProps';
 import GodsPresentational from './GodsPresentational';
 import axios from 'axios';
 
-const GodsWithData = withData('https://apis.devmountain.com/gods/')(GodsPresentational);
+//for HOC
+// const GodsWithData = withData('https://apis.devmountain.com/gods/')(GodsPresentational);
 
 
 class App extends Component {
@@ -24,12 +25,12 @@ class App extends Component {
         {/* <GodsContainerLocalstorage /> */}
         {/* <GodsWithData /> */}
         <WithDataRenderProps url="https://apis.devmountain.com/gods/">
-          {(data) => {
-            return <div>
-              There were {data.length } ancient gods
-            </div>
-          }}
-        </WithDataRenderProps>
+        {(data) => {
+          return <div>
+            There were {data.length } ancient gods
+          </div>
+        }}
+      </WithDataRenderProps>
       </div>
     );
   }
@@ -37,6 +38,7 @@ class App extends Component {
 
 export default App;
 
+//FOR HOC 
 function withData(url) {
   return function(WrappedComponent) {
     return class extends Component {
